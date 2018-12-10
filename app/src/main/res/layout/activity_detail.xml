@@ -10,15 +10,15 @@
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="TextView"
-        android:textSize="30dp"
+        android:textSize="50dp"
         android:textStyle="bold"
         android:maxLines="1"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,10 +35,11 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="TextView"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:maxLines="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"/>
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintBottom_toTopOf="@+id/mood"/>
 
     <TextView
         android:id="@+id/mood"
@@ -51,11 +52,11 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="TextView"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textStyle="italic"
-        android:maxLines="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timestamp"/>
+        app:layout_constraintTop_toBottomOf="@+id/timestamp"
+        app:layout_constraintBottom_toTopOf="@+id/content"/>
 
     <TextView
         android:id="@+id/content"
@@ -68,6 +69,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="TextView"
+        android:textSize="20dp"
         android:inputType="textMultiLine"
         android:maxLines="10"
         app:layout_constraintStart_toStartOf="parent"

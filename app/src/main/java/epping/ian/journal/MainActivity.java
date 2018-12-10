@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         // link the listview to the listeners
         list.setOnItemClickListener(new ListClickListener());
-        list.setOnItemLongClickListener(new LongListClickListener());
+        list.setOnItemLongClickListener(new OnItemLongClickListener());
     }
 
     @Override
@@ -75,19 +75,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // switch to detail window when a journal is long clicked
-    private class LongListClickListener implements AdapterView.OnItemLongClickListener {
+    private class OnItemLongClickListener implements AdapterView.OnItemLongClickListener {
 
         //remove journal from list
         @Override
         public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
             EntryDatabase db = EntryDatabase.getInstance(getApplicationContext());
             Cursor cursor = (Cursor) adapterView.getItemAtPosition(i);
-            int entry = cursor.getInt(cursor.getColumnIndex("_id"));
+            long entry = cursor.getInt(cursor.getColumnIndex("_id"));
 
             // delete proper element
             db.delete(entry);
             updateData();
-            return true;
+            return false;
         }
     }
 }

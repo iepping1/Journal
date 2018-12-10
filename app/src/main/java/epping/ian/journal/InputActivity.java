@@ -7,17 +7,21 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
 
+// onclick listener to remove journals
+// make text bigger/clearer
+// landscape mode (not necessary because of scrolling)
+
 public class InputActivity extends AppCompatActivity {
 
     @Override
 
-    //load in data
+    // load in data
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
     }
 
-    // save to database when the submit button is clicked
+    // save to database when submit button is clicked
     public void addEntry(View view) {
         EditText title = findViewById(R.id.title);
         EditText content = findViewById(R.id.content);
@@ -50,7 +54,7 @@ public class InputActivity extends AppCompatActivity {
         mood.setText("sad");
     }
 
-    // save the mood when rotating phone
+    // save mood when rotating phone
     public void onSaveInstanceState(Bundle outState){
         super.onSaveInstanceState(outState);
 
