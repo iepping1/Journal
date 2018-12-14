@@ -7,15 +7,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
 
-// onclick listener to remove journals
-// make text bigger/clearer
-// landscape mode (not necessary because of scrolling)
-
 public class InputActivity extends AppCompatActivity {
 
     @Override
 
-    // load in data
+    // create input window
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
@@ -69,5 +65,4 @@ public class InputActivity extends AppCompatActivity {
         String moody = savedInstanceState.getString(("moody"));
         mood.setText(moody);
     }
-
 }

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class JournalEntry implements Serializable {
 
-    // create the variables of all friends
+    // create variables for all journals
     private String title, content, mood, timestamp;
     private int id;
 
@@ -41,7 +41,7 @@ public class JournalEntry implements Serializable {
 
     public int getId() { return id; }
 
-    // set the title, mood and time of each journal entry
+    // set the title, moodd, time and identity of each journal entry
     public void setTitle(String title) {
         this.title = title;
     }

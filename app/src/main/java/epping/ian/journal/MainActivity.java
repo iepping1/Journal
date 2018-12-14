@@ -13,16 +13,16 @@ public class MainActivity extends AppCompatActivity {
     ListView list;
 
     @Override
-    // create the main layout
+    // create main layout
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         list = findViewById(R.id.listview);
 
-        // link the database and adapter to the listview
+        // link database and adapter to listview
         updateData();
 
-        // link the listview to the listeners
+        // link listview to listeners
         list.setOnItemClickListener(new ListClickListener());
         list.setOnItemLongClickListener(new OnItemLongClickListener());
     }
@@ -51,14 +51,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    // switch to detail window when a journal from the list is clicked
+    // switch to detail window when listed journal is clicked
     private class ListClickListener implements AdapterView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
             Intent intent = new Intent(MainActivity.this, DetailActivity.class);
 
-            // retrieves the clicked journal and sets the text
+            // retrieves clicked journal and sets the text
             Cursor cursor = (Cursor) adapterView.getItemAtPosition(i);
             String title = cursor.getString(cursor.getColumnIndex("Title"));
             String content = cursor.getString (cursor.getColumnIndex("Content"));
@@ -74,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // switch to detail window when a journal is long clicked
+    // respond to prolonged journal clicks
     private class OnItemLongClickListener implements AdapterView.OnItemLongClickListener {
 
-        //remove journal from list
+        // removes clicked journal from list
         @Override
         public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
             EntryDatabase db = EntryDatabase.getInstance(getApplicationContext());

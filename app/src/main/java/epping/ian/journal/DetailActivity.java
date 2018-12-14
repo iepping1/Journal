@@ -8,6 +8,7 @@ import android.content.Intent;
 
 public class DetailActivity extends AppCompatActivity {
 
+    // create journal window
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,10 +16,10 @@ public class DetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        // catch the journal
+        // catch journal
         JournalEntry entry = (JournalEntry) intent.getSerializableExtra("clicked_Entry");
 
-        // give it the proper data
+        // add proper data
         TextView title = findViewById(R.id.title);
         TextView time = findViewById(R.id.timestamp);
         TextView mood = findViewById(R.id.mood);
@@ -30,7 +31,7 @@ public class DetailActivity extends AppCompatActivity {
         content.setText(entry.getContent());
     }
 
-    // send everything to inputactivity
+    // move to input window when clicked
     public void FloatButtonClicked(View view){
         Intent intent = new Intent(DetailActivity.this, InputActivity.class);
         startActivity(intent);
